@@ -3,62 +3,362 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ScholarPulse AI - Academic Research & Knowledge Synthesis</title>
+  <title>ScholarPulse - Evidence-Grounded Literature Review & Synthesis for Higher Education</title>
+  <meta name="description" content="AI research assistant designed for graduate researchers, PhD candidates, and university faculty. Synthesize 50+ academic papers simultaneously with zero hallucinations.">
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Plus Jakarta Sans', sans-serif; }
+    code, pre { font-family: 'JetBrains Mono', monospace; }
+  </style>
 </head>
-<body class="bg-slate-950 text-slate-100 font-sans antialiased selection:bg-indigo-500 selection:text-white">
+<body class="bg-slate-950 text-slate-100 antialiased selection:bg-indigo-500 selection:text-white">
+
+  <!-- Notification Banner -->
+  <div class="bg-gradient-to-r from-indigo-900/60 via-purple-900/60 to-slate-900 border-b border-indigo-500/20 text-xs text-indigo-200 py-2 px-4 text-center">
+    🎓 <strong>Spring 2026 Academic Cohort:</strong> Free pilot access is currently open for university faculty & PhD candidates. <a href="#apply" class="underline font-semibold text-white ml-1 hover:text-indigo-300">Request Institutional Key →</a>
+  </div>
+
   <!-- Navbar -->
-  <header class="border-b border-slate-800/80 backdrop-blur sticky top-0 z-50 bg-slate-950/80">
-    <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+  <header class="border-b border-slate-800/80 backdrop-blur-md sticky top-0 z-50 bg-slate-950/85">
+    <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
       <div class="flex items-center space-x-3">
-        <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-indigo-500 to-sky-500 flex items-center justify-center font-bold text-white shadow-lg shadow-indigo-500/30">SP</div>
-        <span class="font-bold text-xl tracking-tight text-white">ScholarPulse <span class="text-indigo-400">AI</span></span>
+        <div class="w-8 h-8 rounded-lg bg-gradient-to-tr from-indigo-500 to-sky-400 flex items-center justify-center font-extrabold text-white text-sm shadow-md shadow-indigo-500/30">SP</div>
+        <div class="flex flex-col">
+          <span class="font-bold text-base tracking-tight text-white leading-none">ScholarPulse</span>
+          <span class="text-[10px] text-slate-400 font-mono tracking-wider uppercase">Academic Intelligence</span>
+        </div>
       </div>
-      <a href="#contact" class="text-xs uppercase tracking-wider font-semibold bg-indigo-600 hover:bg-indigo-500 text-white px-4 py-2.5 rounded-lg transition-all shadow-md shadow-indigo-600/30">Request Academic Access</a>
+      
+      <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-slate-300">
+        <a href="#how-it-works" class="hover:text-white transition">Methodology</a>
+        <a href="#features" class="hover:text-white transition">Capabilities</a>
+        <a href="#integrations" class="hover:text-white transition">Integrations</a>
+        <a href="#ethics" class="hover:text-white transition">Academic Integrity</a>
+        <a href="#faq" class="hover:text-white transition">FAQ</a>
+      </nav>
+
+      <div class="flex items-center space-x-3">
+        <a href="#apply" class="text-xs font-semibold text-slate-300 hover:text-white px-3 py-2 transition">Sign In</a>
+        <a href="#apply" class="text-xs font-semibold bg-indigo-600 hover:bg-indigo-500 text-white px-4 py-2.5 rounded-lg transition-all shadow-md shadow-indigo-600/30">Get Academic Access</a>
+      </div>
     </div>
   </header>
 
   <!-- Hero Section -->
-  <main class="max-w-5xl mx-auto px-6 pt-24 pb-20 text-center">
-    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-indigo-500/30 bg-indigo-500/10 text-indigo-300 text-xs font-medium mb-6">
-      <span class="w-2 h-2 rounded-full bg-indigo-400 animate-pulse"></span> Powered by Claude Frontier Intelligence Models
+  <section class="max-w-6xl mx-auto px-6 pt-20 pb-16 text-center">
+    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-indigo-500/30 bg-indigo-500/10 text-indigo-300 text-xs font-medium mb-6">
+      <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+      Direct PDF Citation Grounding • Powered by Claude Frontier Reasoning API
     </div>
-    <h1 class="text-5xl md:text-6xl font-extrabold tracking-tight text-white leading-tight mb-6">
-      Autonomous Knowledge Synthesis for <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-sky-300 to-teal-300">Higher Education</span>
-    </h1>
-    <p class="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto mb-10 leading-relaxed">
-      Empowering university students, researchers, and academic institutions across Turkey and the MENA region with grounded, hallucination-free thesis analysis and literature synthesis.
-    </p>
-    <div class="flex justify-center gap-4">
-      <a href="#contact" class="px-7 py-3.5 bg-gradient-to-r from-indigo-500 to-sky-600 hover:from-indigo-600 hover:to-sky-700 text-white font-semibold rounded-xl shadow-lg shadow-indigo-500/25 transition">Join University Beta</a>
-    </div>
-  </main>
 
-  <!-- Core Features -->
-  <section class="max-w-6xl mx-auto px-6 py-16 border-t border-slate-900">
-    <div class="grid md:grid-cols-3 gap-8">
-      <div class="p-6 rounded-2xl bg-slate-900/60 border border-slate-800 hover:border-slate-700 transition">
-        <div class="w-10 h-10 rounded-lg bg-indigo-500/10 text-indigo-400 flex items-center justify-center font-bold mb-4">01</div>
-        <h3 class="text-lg font-semibold text-white mb-2">Deep Literature Reviews</h3>
-        <p class="text-slate-400 text-sm leading-relaxed">Incorporate 200k tokens of multi-paper academic corpora simultaneously with exact citation grounding.</p>
+    <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight text-white leading-tight mb-6">
+      Literature reviews in <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-sky-300 to-teal-300">hours, not months</span>.<br class="hidden md:block">
+      Grounded in peer-reviewed evidence.
+    </h1>
+
+    <p class="text-base md:text-lg text-slate-300 max-w-3xl mx-auto mb-10 leading-relaxed">
+      The domain-aware research assistant designed for graduate students, thesis advisors, and academic faculty. Ingest 50+ papers simultaneously across Turkish and English corpora with strictly zero hallucinated citations.
+    </p>
+
+    <div class="flex flex-col sm:flex-row justify-center items-center gap-4 mb-16">
+      <a href="#apply" class="w-full sm:w-auto px-7 py-3.5 bg-indigo-600 hover:bg-indigo-500 text-white font-semibold rounded-xl shadow-lg shadow-indigo-600/30 transition text-sm flex items-center justify-center gap-2">
+        <span>Request Institutional Beta Access</span>
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+      </a>
+      <a href="#demo" class="w-full sm:w-auto px-6 py-3.5 rounded-xl border border-slate-700 hover:border-slate-600 text-slate-300 hover:text-white font-medium text-sm transition bg-slate-900/50 flex items-center justify-center gap-2">
+        <svg class="w-4 h-4 text-indigo-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"/></svg>
+        <span>Explore Sample Literature Matrix</span>
+      </a>
+    </div>
+
+    <!-- UI Mockup: Realistic Academic Dashboard -->
+    <div id="demo" class="relative rounded-2xl border border-slate-800 bg-slate-900/80 shadow-2xl shadow-indigo-950/40 overflow-hidden text-left max-w-5xl mx-auto">
+      <!-- Browser Top Bar -->
+      <div class="bg-slate-900 border-b border-slate-800 px-4 py-3 flex items-center justify-between">
+        <div class="flex items-center space-x-2">
+          <div class="w-3 h-3 rounded-full bg-rose-500/80"></div>
+          <div class="w-3 h-3 rounded-full bg-amber-500/80"></div>
+          <div class="w-3 h-3 rounded-full bg-emerald-500/80"></div>
+          <span class="ml-3 text-xs font-mono text-slate-400">scholarpulse.online/workspace/thesis-literature-matrix</span>
+        </div>
+        <div class="text-xs bg-indigo-500/20 text-indigo-300 border border-indigo-500/30 px-2.5 py-1 rounded-md font-mono">
+          42 Papers Loaded • 1.4M Tokens Active Context
+        </div>
       </div>
-      <div class="p-6 rounded-2xl bg-slate-900/60 border border-slate-800 hover:border-slate-700 transition">
-        <div class="w-10 h-10 rounded-lg bg-sky-500/10 text-sky-400 flex items-center justify-center font-bold mb-4">02</div>
-        <h3 class="text-lg font-semibold text-white mb-2">Cross-Lingual Thesis Parsing</h3>
-        <p class="text-slate-400 text-sm leading-relaxed">High-fidelity reasoning across Turkish and English academic papers, syllabi, and empirical data sets.</p>
-      </div>
-      <div class="p-6 rounded-2xl bg-slate-900/60 border border-slate-800 hover:border-slate-700 transition">
-        <div class="w-10 h-10 rounded-lg bg-teal-500/10 text-teal-400 flex items-center justify-center font-bold mb-4">03</div>
-        <h3 class="text-lg font-semibold text-white mb-2">Academic Integrity & Privacy</h3>
-        <p class="text-slate-400 text-sm leading-relaxed">Strict zero-data-retention compliance via Anthropic Claude Console API protecting university IP.</p>
+
+      <!-- App Inside -->
+      <div class="grid grid-cols-1 md:grid-cols-12 bg-slate-950 text-slate-300 text-xs">
+        
+        <!-- Left Panel: Corpus / Sources -->
+        <div class="md:col-span-4 border-r border-slate-800/80 p-4 space-y-3 bg-slate-950/60">
+          <div class="flex items-center justify-between font-semibold text-slate-200 uppercase tracking-wider text-[11px]">
+            <span>Active Paper Corpus (42)</span>
+            <span class="text-indigo-400 hover:underline cursor-pointer">+ Sync Zotero</span>
+          </div>
+
+          <!-- Paper item 1 -->
+          <div class="p-2.5 rounded-lg bg-slate-900 border border-indigo-500/30">
+            <div class="flex items-center justify-between text-[10px] text-indigo-300 mb-1">
+              <span class="font-mono bg-indigo-950/80 px-1.5 py-0.5 rounded border border-indigo-800">TR DİZİN 2024</span>
+              <span>18 Citations</span>
+            </div>
+            <p class="font-semibold text-slate-100 text-xs leading-snug">Yılmaz & Kaya - Yükseköğretimde Üretken Yapay Zeka Entegrasyonunun Akademik Başarıya Etkisi</p>
+            <p class="text-[11px] text-slate-400 mt-1">Eğitim Bilimleri Dergisi • 24 sayfa • PDF Ekli</p>
+          </div>
+
+          <!-- Paper item 2 -->
+          <div class="p-2.5 rounded-lg bg-slate-900/50 border border-slate-800">
+            <div class="flex items-center justify-between text-[10px] text-emerald-400 mb-1">
+              <span class="font-mono bg-emerald-950/60 px-1.5 py-0.5 rounded border border-emerald-800">IEEE 2025</span>
+              <span>142 Citations</span>
+            </div>
+            <p class="font-semibold text-slate-200 text-xs leading-snug">Demir et al. - Multi-Agent LLM Synthesis for Empirical Research Methodologies</p>
+            <p class="text-[11px] text-slate-400 mt-1">IEEE Trans. Learning Tech • 14 sayfa</p>
+          </div>
+
+          <!-- Paper item 3 -->
+          <div class="p-2.5 rounded-lg bg-slate-900/50 border border-slate-800">
+            <div class="flex items-center justify-between text-[10px] text-sky-400 mb-1">
+              <span class="font-mono bg-sky-950/60 px-1.5 py-0.5 rounded border border-sky-800">YÖK TEZ 2023</span>
+              <span>Doktora Tezi</span>
+            </div>
+            <p class="font-semibold text-slate-200 text-xs leading-snug">Aksoy, M. - Akademik Metinlerde Halüsinasyon Tespiti ve Kaynak Doğrulama Algoritmaları</p>
+            <p class="text-[11px] text-slate-400 mt-1">ODTÜ Enformatik Enstitüsü • 182 sayfa</p>
+          </div>
+        </div>
+
+        <!-- Right Panel: Synthesis Workspace -->
+        <div class="md:col-span-8 p-5 space-y-4 bg-slate-900/40">
+          <div class="flex items-center justify-between border-b border-slate-800 pb-3">
+            <div>
+              <span class="text-slate-400 text-[11px]">Prompt / Synthesis Target:</span>
+              <h4 class="font-semibold text-slate-100 text-sm">"Compare sample sizes, statistical methodologies, and reported limitations across active empirical papers."</h4>
+            </div>
+            <div class="flex gap-2">
+              <button class="px-2.5 py-1 bg-slate-800 hover:bg-slate-700 text-slate-200 rounded border border-slate-700 text-[11px]">Export BibTeX</button>
+              <button class="px-2.5 py-1 bg-indigo-600 hover:bg-indigo-500 text-white rounded text-[11px] font-medium">Push to Overleaf</button>
+            </div>
+          </div>
+
+          <!-- Live Synthesis Stream -->
+          <div class="space-y-3 font-sans text-slate-300 leading-relaxed text-xs">
+            <div class="p-3.5 rounded-xl bg-slate-950/80 border border-slate-800 space-y-2">
+              <div class="flex items-center justify-between">
+                <span class="font-bold text-indigo-300 uppercase tracking-wider text-[10px] flex items-center gap-1.5">
+                  <span class="w-1.5 h-1.5 rounded-full bg-indigo-400"></span> Claude 3.5 Synthesis Engine • Grounded Response
+                </span>
+                <span class="text-[10px] text-emerald-400 font-mono">100% Verified Citations</span>
+              </div>
+              <p>
+                İncelenen çalışmalar arasında örneklem metodolojisi bakımından iki temel ayrışma görülmektedir:
+              </p>
+              <ul class="space-y-2 pl-3 border-l-2 border-indigo-500/40">
+                <li>
+                  <strong>1. Nitel Analiz Grubu:</strong> 
+                  <span class="text-slate-200">Yılmaz & Kaya (2024)</span>, 8 farklı devlet üniversitesinden 340 lisansüstü öğrenci üzerinde t-testi ve regresyon analizi uygulamıştır. 
+                  <span class="inline-block px-1.5 py-0.5 rounded bg-indigo-950 text-indigo-300 font-mono text-[10px] border border-indigo-800 cursor-pointer hover:bg-indigo-900" title="Click to view PDF snippet">
+                    [Yılmaz 2024, s. 14, Tablo 3]
+                  </span>
+                </li>
+                <li>
+                  <strong>2. Bilişimsel Değerlendirme Grubu:</strong> 
+                  <span class="text-slate-200">Demir et al. (2025)</span> ise 10,000+ sentetik ve insan doğrulamalı akademik metin üzerinde F1-skoru benchmark'ı kurgulamış, ancak modelin TR-Dizin verilerindeki Türkçe bağlam kısıtını başlıca sınırlılık olarak raporlamıştır.
+                  <span class="inline-block px-1.5 py-0.5 rounded bg-indigo-950 text-indigo-300 font-mono text-[10px] border border-indigo-800 cursor-pointer hover:bg-indigo-900">
+                    [Demir 2025, p. 8, Sec 4.2]
+                  </span>
+                </li>
+              </ul>
+              <div class="pt-2 flex items-center gap-2 text-[11px] text-slate-400 border-t border-slate-800/80">
+                <span class="text-emerald-400">✓</span> Tüm atıflar ekli PDF'lerin orijinal sayfa ve paragraflarıyla eşleştirilmiştir.
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
 
+  <!-- Problem vs Solution: Real Academic Workflow -->
+  <section id="how-it-works" class="py-20 border-t border-slate-900 bg-slate-950">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="text-xs uppercase tracking-widest text-indigo-400 font-bold mb-3">Why Traditional LLMs Fail in Academia</h2>
+        <h3 class="text-3xl md:text-4xl font-extrabold text-white">General AI chats hallucinate papers.<br>ScholarPulse reads the exact pages.</h3>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8">
+        <!-- The Old Way -->
+        <div class="p-8 rounded-2xl bg-slate-900/30 border border-rose-500/20 space-y-4">
+          <div class="flex items-center gap-3 text-rose-400 font-bold text-sm">
+            <span class="p-1 rounded bg-rose-500/10">✕</span> Standard Chatbots & Scrapers
+          </div>
+          <ul class="space-y-3 text-slate-400 text-sm">
+            <li class="flex items-start gap-2">
+              <span class="text-rose-500 mt-1">•</span>
+              <span><strong>Invented Citations:</strong> Generates papers and DOIs that do not exist in reality.</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-rose-500 mt-1">•</span>
+              <span><strong>Context Fragmentation:</strong> Fails when feeding 20+ comprehensive theses due to narrow token windows.</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-rose-500 mt-1">•</span>
+              <span><strong>Language Bias:</strong> Weak parsing on local non-English research databases (e.g., TR Dizin, DergiPark).</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- The ScholarPulse Way -->
+        <div class="p-8 rounded-2xl bg-indigo-950/20 border border-indigo-500/30 space-y-4">
+          <div class="flex items-center gap-3 text-emerald-400 font-bold text-sm">
+            <span class="p-1 rounded bg-emerald-500/10">✓</span> ScholarPulse Grounded Architecture
+          </div>
+          <ul class="space-y-3 text-slate-300 text-sm">
+            <li class="flex items-start gap-2">
+              <span class="text-emerald-400 mt-1">•</span>
+              <span><strong>Strict Provenance:</strong> Every single sentence is tied to exact page coordinates in the source PDF.</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-emerald-400 mt-1">•</span>
+              <span><strong>200k+ Extended Context:</strong> Ingest full master's theses, empirical tables, and appendices in one query.</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-emerald-400 mt-1">•</span>
+              <span><strong>Bi-directional Cross-Lingual:</strong> Reads Turkish academic corpora and synthesizes into global English standards (or vice-versa).</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Key Capabilities Grid -->
+  <section id="features" class="py-20 border-t border-slate-900 bg-slate-900/30">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <h2 class="text-xs uppercase tracking-widest text-indigo-400 font-bold mb-3">Core Research Modules</h2>
+        <h3 class="text-3xl font-extrabold text-white">Engineered for Academic Rigor</h3>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6">
+        <!-- Feature 1 -->
+        <div class="p-6 rounded-2xl bg-slate-950 border border-slate-800 hover:border-indigo-500/50 transition">
+          <div class="w-10 h-10 rounded-lg bg-indigo-500/10 text-indigo-400 flex items-center justify-center font-bold text-sm mb-4">01</div>
+          <h4 class="text-base font-bold text-white mb-2">Literature Matrix Generator</h4>
+          <p class="text-slate-400 text-xs leading-relaxed">
+            Automatically extracts research questions, methodology, sample sizes, datasets, and limitations into an editable tabular matrix.
+          </p>
+        </div>
+
+        <!-- Feature 2 -->
+        <div class="p-6 rounded-2xl bg-slate-950 border border-slate-800 hover:border-indigo-500/50 transition">
+          <div class="w-10 h-10 rounded-lg bg-sky-500/10 text-sky-400 flex items-center justify-center font-bold text-sm mb-4">02</div>
+          <h4 class="text-base font-bold text-white mb-2">Research Gap Discovery</h4>
+          <p class="text-slate-400 text-xs leading-relaxed">
+            Cross-analyzes 50+ papers to uncover contradictory empirical findings and under-researched methodology niches for your thesis proposal.
+          </p>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="p-6 rounded-2xl bg-slate-950 border border-slate-800 hover:border-indigo-500/50 transition">
+          <div class="w-10 h-10 rounded-lg bg-emerald-500/10 text-emerald-400 flex items-center justify-center font-bold text-sm mb-4">03</div>
+          <h4 class="text-base font-bold text-white mb-2">Bi-directional Reference Sync</h4>
+          <p class="text-slate-400 text-xs leading-relaxed">
+            Export directly to BibTeX, Zotero, Mendeley, and Overleaf LaTeX projects with flawless metadata formatting.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Academic Integrity & Ethics Guarantee -->
+  <section id="ethics" class="py-16 border-t border-slate-900 bg-slate-950">
+    <div class="max-w-4xl mx-auto px-6 rounded-2xl bg-gradient-to-b from-slate-900 to-slate-950 p-8 border border-slate-800 text-center">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 text-xs font-semibold mb-4 border border-emerald-500/20">
+        🛡️ Academic Ethics & Zero-Ghostwriting Pledge
+      </div>
+      <h3 class="text-2xl font-bold text-white mb-3">Designed for Exploration, Not Plagiarism</h3>
+      <p class="text-slate-300 text-sm leading-relaxed max-w-2xl mx-auto mb-6">
+        ScholarPulse is an analytical synthesis assistant—not an automated text generator. It is built to assist human researchers in navigating literature, cross-referencing claims, and accelerating literature reviews in full compliance with university ethics boards.
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs text-slate-400 font-mono">
+        <div class="p-3 rounded-lg bg-slate-950 border border-slate-800/80">🔒 Zero Data Retention via API</div>
+        <div class="p-3 rounded-lg bg-slate-950 border border-slate-800/80">📄 Unpublished Theses Not Stored</div>
+        <div class="p-3 rounded-lg bg-slate-950 border border-slate-800/80">📜 100% Traceable Citations</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section id="faq" class="py-20 border-t border-slate-900 bg-slate-900/20">
+    <div class="max-w-4xl mx-auto px-6">
+      <h3 class="text-3xl font-extrabold text-white text-center mb-12">Frequently Asked Questions</h3>
+      
+      <div class="space-y-4 text-sm">
+        <div class="p-5 rounded-xl bg-slate-900/60 border border-slate-800">
+          <h4 class="font-bold text-white mb-2">How does ScholarPulse prevent AI hallucinations?</h4>
+          <p class="text-slate-400 leading-relaxed text-xs">
+            We use Claude 3.5's state-of-the-art reasoning APIs coupled with vector embeddings of your uploaded PDFs. The model is strictly instructed to only answer using provided document fragments and must quote page/line coordinates. If a claim cannot be verified in the corpus, it explicitly flags it.
+          </p>
+        </div>
+
+        <div class="p-5 rounded-xl bg-slate-900/60 border border-slate-800">
+          <h4 class="font-bold text-white mb-2">Is this tool free for university students and academics?</h4>
+          <p class="text-slate-400 leading-relaxed text-xs">
+            Yes. During our academic pilot program in 2026, university students, master's/PhD candidates, and faculty can access ScholarPulse for free by applying with their institutional email address.
+          </p>
+        </div>
+
+        <div class="p-5 rounded-xl bg-slate-900/60 border border-slate-800">
+          <h4 class="font-bold text-white mb-2">Are my unpublished research drafts safe?</h4>
+          <p class="text-slate-400 leading-relaxed text-xs">
+            Yes. All document processing utilizes enterprise Anthropic API connections with zero data retention (ZDR). Your private manuscripts and theses are never used to train foundation models.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Application CTA Section -->
+  <section id="apply" class="py-20 border-t border-slate-900 bg-gradient-to-b from-slate-950 to-indigo-950/40 text-center">
+    <div class="max-w-3xl mx-auto px-6">
+      <h3 class="text-3xl md:text-4xl font-extrabold text-white mb-4">Join the Higher Education Pilot</h3>
+      <p class="text-slate-400 text-sm mb-8 leading-relaxed">
+        Accelerate your literature review for your thesis, paper, or research grant. Immediate institutional access for universities in Turkey and regional research centers.
+      </p>
+
+      <form class="max-w-md mx-auto space-y-3" onsubmit="event.preventDefault(); alert('Thank you! Your institutional access request has been received. Our team will review and approve your credentials shortly.');">
+        <input type="email" required placeholder="name@university.edu or your institutional email" class="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-700 text-slate-100 placeholder-slate-500 text-xs focus:outline-none focus:border-indigo-500">
+        <input type="text" placeholder="Institution / University Name (e.g. ODTÜ, İTÜ, Boğaziçi)" class="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-700 text-slate-100 placeholder-slate-500 text-xs focus:outline-none focus:border-indigo-500">
+        <button type="submit" class="w-full py-3.5 bg-indigo-600 hover:bg-indigo-500 text-white font-semibold rounded-xl text-xs shadow-lg shadow-indigo-600/30 transition">
+          Submit Academic Pilot Application
+        </button>
+      </form>
+      <p class="text-[11px] text-slate-500 mt-3">No credit card required • Institutional verification within 24 hours</p>
+    </div>
+  </section>
+
   <!-- Footer -->
-  <footer id="contact" class="border-t border-slate-900 py-12 text-center text-slate-500 text-xs">
-    <p>© 2026 ScholarPulse AI Technologies Inc. All rights reserved.</p>
-    <p class="mt-2">Higher Education AI Ecosystem • Contact: contact@scholarpulse.online</p>
+  <footer class="border-t border-slate-900 py-12 bg-slate-950 text-slate-500 text-xs">
+    <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
+      <div>
+        <p class="font-semibold text-slate-300">ScholarPulse AI Technologies</p>
+        <p class="mt-1 text-[11px]">Evidence-grounded intelligence ecosystem for higher education.</p>
+      </div>
+      <div class="flex items-center space-x-6 text-[11px]">
+        <a href="#ethics" class="hover:text-slate-300">Ethics Policy</a>
+        <a href="#faq" class="hover:text-slate-300">Privacy & ZDR</a>
+        <a href="mailto:contact@scholarpulse.online" class="text-indigo-400 hover:underline">contact@scholarpulse.online</a>
+      </div>
+    </div>
+    <div class="text-center text-[11px] text-slate-600 mt-8">
+      © 2026 ScholarPulse Inc. All rights reserved. Built with Claude Frontier Reasoning APIs.
+    </div>
   </footer>
+
 </body>
 </html>
